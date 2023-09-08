@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeraney tech</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="icon"  href="/image/jendarey.jpg">
+
+
+  <script>
+   function myFunction() {
+  alert("Vote submitted successfully");
+}
+</script>
+
+  <style>
+
+  </style>
+
+</head>
+<body>
+
+
+<div class="container">
+  <div style="background-color:purple;border-radius:30px">
+
+    <div style="display:flex;justify-content:center;align-items:center;margin:10px;padding:15px; background-color:purple" >
+
+
+    <img src="/image/jendarey.jpg"  height="100px" width="140px" class="rounded-circle" alt="jendarey">
+      <h class="welcome">
+        Jendarey Voting-Result App
+      </h>
+
+      <div class="card topright" style=" background-color:violet">
+
+        <div   class="card-body">
+
+          <p5 style="color:white;" th:text="'host name: '+  ' ' + ${hostName}"></p5>
+          <br/>
+
+          <p5 style="color:white;" th:text="'ip address : ' + ' ' + ${ip}"></p5>
+
+
+
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+  <div  class="word-align">
+
+    
+      <h2 class="word-text" align="center">Introducing the DevOps Engineer Bootcamp Training by Jendarey Technologies: Your Pathway from
+      Novice to Expert
+
+      Welcome to Jendarey Consulting Inc., operating as Jendarey Technologies. Embark on an
+      enriching journey with our DevOps Engineer Bootcamp Training, a transformative experience
+      designed to guide both
+      beginners and seasoned professionals toward a lucrative and fulfilling career as a DevOps
+      Engineer. We are thrilled to be your companions on this educational expedition, dedicated to
+      fostering learning and honing skills that will unlock a realm of possibilities in the dynamic
+      realm of technology.</h2>
+
+
+  </div>
+
+  <H2 style="color:purple;padding:20px;text-align:center;font-weight:bold">
+    Vote for your favourite DevOps tools
+  </H2>
+
+  <div class="darkened-image" style="background-image: url('/image/family.jpeg');">
+    <div style="background-color:rgba(192,192,192,0.3); padding:30px;">
+    <form th:action="@{/vote}" th:object="${voter}" method="post"  onsubmit="myFunction()">
+
+      <div class="form-group row" style="padding:20px;">
+
+        <div class="col-sm-6">
+
+
+          <label for="firstName">Fist Name</label>
+          <input class="form-control" field="*{firstName}" name="firstName"
+                 id="firstName" type="text" placeholder="First Name" required>
+
+          <label for="lastName">Last Name</label>
+          <input class="form-control" field="*{lastName}" name="lastName"
+                 id="LastName" type="text" placeholder="Last Name" required>
+
+
+          <label for="Email">Email Address</label>
+          <input class="form-control" field="*{email}" name="email"
+                 id="Email" placeholder="Email" type="Email" required>
+
+
+
+
+
+
+        </div>
+
+        <div class="col-sm-6">
+
+
+
+          <label for="phoneNo">Phone No</label>
+          <input type="text" class="form-control" field="*{phoneNo}" name="phoneNo"
+                 id="phoneNo" placeholder="Phone Number" required>
+
+          <label for="yearsOfExperience">Years of Experience</label>
+          <input class="form-control" field="*{yearsOfExperience}" name="yearsOfExperience"
+                 id="yearsOfExperience" type="text" placeholder="Years of Experience" required>
+
+          <label for="country">Country of Residence</label>
+          <input type="text" class="form-control" field="*{country}" name="country"
+                 id="country" placeholder="Country" required>
+
+        </div>
+
+        <div style="margin-left: auto;
+              margin-right: auto;">
+          <label> Vote for your favourite DevOps tools</label>
+          <select class="form-control" id="devopsTools" name="devopsTools">
+            <option th:each="value : ${T(com.jendarey.jendareytech.model.DevopsTools).values()}"
+                    th:value="${value}" th:text="${value}"></option>
+          </select>
+          <div>
+
+
+
+
+      </div>
+
+      <div class="button-style" >
+        <button type="submit" class="btn btn-primary"  style="margin-right:40px">cast vote</button>
+        <div style="margin-right:160px"></div>
+        <button type="button" class="btn btn-danger" onclick="location.href='/list'" >check result</button>
+      </div>
+
+        </div>
+      </div>
+
+
+
+    </form>
+
+
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+<footer class="text-white text-center text-lg-start container"
+        style="background-color:purple;margin-top:20px; padding:10px">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row mt-4">
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">About company</h5>
+
+        <p>
+          We are thrilled to be your companions on this educational expedition, dedicated to
+          fostering learning and honing skills that will unlock a realm of possibilities in the dynamic
+          realm of technology.
+        </p>
+
+        <div class="mt-4">
+        </div>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+        <div class="form-outline form-white mb-4">
+
+          <h5 class="text-uppercase mb-4 pb-1">Jendarey consulting Inc.</h5>
+        </div>
+
+        <ul class="fa-ul" style="margin-left: 1.65em;">
+
+          <li class="mb-3">
+          <span class="ms-2"> <a href = "mailto:admin@jendareyconsulting.com?subject = Feedback&body = Message">
+            <p style="color:white"> Send Feedback  admin@jendareyconsulting.com </p>
+          </a></span>
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+1 (682) 298-8089</span>
+          </li>
+
+          <li class="mb-3">
+            <span class="ms-2">
+            <a href="https://devops.jendareyconsulting.com"><p style="color:white">
+              https://devops.jendareyconsulting.com </p></a></span>
+
+          </li>
+
+
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">Lecture hours</h5>
+
+        <table class="table text-center text-white">
+          <tbody class="fw-normal">
+          <tr>
+            <td>Thursday:</td>
+            <td>6:00 pm to 9:00pm CST</td>
+          </tr>
+          <tr>
+            <td>Saturday:</td>
+            <td>10 am to 1:00pm CST</td>
+          </tr>
+          <tr>
+            <td>Sunday:</td>
+            <td>2:00 pm to 5:00pm CST</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="/">Jendarey</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+</div>
+
+</body>
+
+
+
+
+
+</html>

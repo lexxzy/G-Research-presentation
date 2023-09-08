@@ -1,0 +1,59 @@
+label{
+       color:white;
+       font-weight:bold;
+       font-size:20px;
+       padding:5px;
+       margin:5px;
+
+   }
+
+.welcome{
+ padding:30px;
+ color:white;
+ font-size:40px;
+ font-weight:bold;
+ justify-content:center
+
+}
+
+
+  .button-style{
+  display: flex;
+  justify-content:space-between;
+  max-width:450px;
+  margin: 60px auto 60px auto;
+  padding:20px 10px
+  }
+
+
+
+.word-align{
+  text-align: justify;
+  text-justify: inter-word;
+}
+.word-text{
+  font-size:17px;
+ font-weight: bold;
+  color:purple;
+  padding-top:15px
+}
+
+ body{
+    padding:30px
+    }
+    .topright{
+    position:relative;
+    float:right;
+    border-radius:40px;
+
+    }
+
+    .top-right{
+        position:absolute;
+        top:0px;
+        right:0px;
+        border-radius:40px
+
+        }
+
+

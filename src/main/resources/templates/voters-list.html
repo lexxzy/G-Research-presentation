@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>vote list</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/css/style.css" rel="stylesheet">
+  <style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+  </style>
+</head>
+<body>
+
+<div  class="container">
+
+
+<div th:switch="${voter}">
+
+  <div th:case="*">
+    <h2 class="word-text" style="font-size:40px">Vote result page</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>first name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Years of experience</th>
+        <th>Tools Voted</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="voter : ${voter}">
+        <td th:text="${voter.firstName}"></td>
+        <td th:text="${voter.lastName}"></td>
+        <td th:text="${voter.email}"></td>
+        <td th:text="${voter.yearsOfExperience}"></td>
+        <td th:text="${voter.devopsTools}"></td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <button type="button" onclick="location.href='/index'" class="btn btn-primary" style="margin:30px">
+    Go to home
+  </button>
+
+
+</div>
+
+<!--<tr th:each="instance : ${we}">
+  <td th:text="${instance.key}">keyvalue</td>
+  <td th:text="${instance.value}">num</td>
+</tr>-->
+
+
+</body>
+</html>

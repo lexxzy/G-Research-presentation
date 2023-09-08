@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  jendarey-voting-app:
+    image: jendaredocker/jendarey-voting-app-main:latest
+    restart: always
+    environment:
+      - MONGO_DB_HOSTNAME=mongo
+      - MONGO_DB_USERNAME=proddb
+      - MONGO_DB_PASSWORD=proddb123
+    ports:
+      - 15000:8080
+    working_dir: /opt/app
+    depends_on:
+      - mongo
+    networks:
+      - network  
+ 
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=proddb
+      - MONGO_INITDB_ROOT_PASSWORD=proddb123
+    networks:
+      - network
+
+networks:
+  network:
+   
+
