@@ -1,4 +1,4 @@
-Jendarey-Voting-App:
+jendarey-voting-app:
   data:
     mongodb:
       host: ${MONGO_DB_HOSTNAME}
