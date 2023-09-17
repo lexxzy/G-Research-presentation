@@ -1,4 +1,4 @@
-jendarey-voting-app:
+spring:
   data:
     mongodb:
       host: ${MONGO_DB_HOSTNAME}

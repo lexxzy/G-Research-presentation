@@ -19,19 +19,20 @@ public enum DevopsTools {
     Kubernetes("kubernetes"),
 
     Prometheus("Prometheus"),
+
     Grafana("GRANFANA"),
 
     Ansible("Ansible"),
+
     Terraform("Terraform"),
+
     Amazon("Amazon"),
+
     Azure("AZURE"),
 
     Google_Cloud("GOOGLE_CLOUD"),
+
     Oracle("ORACLE");
-
-
-
-
 
     private final String tools;
 

@@ -1,7 +1,5 @@
 package com.jendarey.jendareytech.model;
 
-
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,13 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Voter {
 
-
-
-
-
-
-
-    private  String firstName;
+    private String firstName;
+    
     private String lastName;
 
     private String phoneNo;
@@ -25,8 +18,10 @@ public class Voter {
     private String country;
 
     private String yearsOfExperience;
-    private  String email;
-    private  DevopsTools devopsTools;
+
+    private String email;
+
+    private DevopsTools devopsTools;
 
 
 

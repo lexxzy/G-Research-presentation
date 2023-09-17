@@ -9,6 +9,7 @@ public interface VoterService {
   public void save(Voter voter);
 
   public String getIpAddress();
+  
   public String getHostName();
 
   public List<Voter> getVoteDetails();
