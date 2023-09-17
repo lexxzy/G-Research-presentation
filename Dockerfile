@@ -24,7 +24,8 @@ CMD ["catalina.sh", "run"]
 # ls /usr/local/tomcat/logs
 # cat /usr/local/tomcat/logs
 # docker logs jendarey-tech-mongo-1
-# docker run -d -p 8080:8080 --name=voting-app4 jendaredocker/jendarey-voting-main:latest
+# docker run -d -p 14000:8080 --name=voting-app4 jendaredocker/jendarey-voting-main:latest
+# docker run -d -p 16000:8080 --name=cookies-web jendaredocker/jendarey-cookie-company-webpage:latest
 # docker pull 10.1.13-jdk17
 # Copy the .war file to the `webapps` directory
 # docker cp target/a23-webpage.war tomcat:10.1.13-jdk17:/usr/local/tomcat/webapps/

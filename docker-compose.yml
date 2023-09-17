@@ -21,6 +21,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=proddb
       - MONGO_INITDB_ROOT_PASSWORD=proddb123
+    restart: always
     networks:
       - network
 
