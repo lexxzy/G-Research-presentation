@@ -1,31 +1,36 @@
-version: '3.1'
+version: '3'
 
 services:
   jendarey-voting-app:
-    image: jendaredocker/jendarey-voting-app-main:latest
+    image: jendaredocker/jendarey-voting-app-main
+    container_name: jendarey-voting-app
     restart: always
-    environment:
-      - MONGO_DB_HOSTNAME=mongo
-      - MONGO_DB_USERNAME=proddb
-      - MONGO_DB_PASSWORD=proddb123
     ports:
-      - 15000:8080
-    working_dir: /opt/app
-    depends_on:
-      - mongo
+      - "14000:8080"
     networks:
-      - network  
- 
-  mongo:
-    image: mongo
+      - jendarey-network
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=proddb
-      - MONGO_INITDB_ROOT_PASSWORD=proddb123
+      MONGO_DB_USERNAME: admin
+      MONGO_DB_PASSWORD: admin123
+      MONGO_DB_HOSTNAME: jendarey-mongo
+
+  jendarey-mongo:
+    image: mongo
+    container_name: jendarey-mongo
     restart: always
     networks:
-      - network
+      - jendarey-network
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_ROOT_USERNAME: admin
+    volumes:
+      - jendarey-mongo-data-two:/data/db
 
 networks:
-  network:
-   
+  jendarey-network:
+    driver: bridge
+
+volumes:
+  jendarey-mongo-data-two:
+
 
