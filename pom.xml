@@ -8,9 +8,9 @@
 		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jendarey</groupId>
-	<artifactId>jendarey-tech</artifactId>
-	<version>0.0.1</version>
+	<groupId>com.GR</groupId>
+	<artifactId>GR-tech</artifactId>
+ 	<version>0.0.1</version>
 	<packaging>war</packaging>
 	<name>jendarey-tech</name>
 	<description>JendareyTech Web Java Project</description>
@@ -71,19 +71,19 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>Jendarey Technologies Releases Nexus Repository</name>
+			<name>G-Research Technologies Releases Nexus Repository</name>
 			<url>http://34.228.220.53:8081/jendarey/repository/web-releases/</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>Jendarey Technologies Snapshot Nexus Repository</name>
+			<name>G-Resaerch Snapshot Nexus Repository</name>
 			<url>http://34.228.220.53:8081/jendarey/repository/web-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
-	 <finalName>jendarey-voting-app-main</finalName>
+	 <finalName>GR-voting-app-main</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

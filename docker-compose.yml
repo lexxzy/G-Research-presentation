@@ -2,7 +2,7 @@ version: '3'
 
 services:
   jendarey-voting-app:
-    image: jendaredocker/jendarey-voting-app-main
+    image: g-research 
     container_name: jendarey-voting-app
     restart: always
     ports:
