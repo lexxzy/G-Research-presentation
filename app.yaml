@@ -49,7 +49,7 @@ spec:
   replicas: 1
   selector:
     app: mongo
-  serviceName: mongo
+  serviceName: <ServiceName>
   template:
     metadata:
       labels:
