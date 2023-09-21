@@ -1,6 +1,6 @@
 ---
 - name: Application Deployment
-  hosts: localhost
+  hosts: k8
   tasks:
     - name: Deploy Application
       shell: kubectl apply -f app.yaml
