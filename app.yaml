@@ -41,53 +41,65 @@ spec:
     app: springboot
 ---
 # MongoDB Replication Controller with host path Volume
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongosvc
+spec:
+  clusterIP: None # Headless Service
+  selector:
+    app: mongod
+  ports:
+  - port: 27017
+    targetPort: 27017
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongo-controller
+  name: mongod
 spec:
-  replicas: 1
   selector:
-    app: mongo
-  serviceName: <ServiceName>
+    matchLabels:
+      app: mongod
+  serviceName: mongosvc
+  replicas: 3
   template:
     metadata:
       labels:
-        app: mongo
+        app: mongod
     spec:
+      terminationGracePeriodSeconds: 10
       containers:
-      - name: mongo
+      - name: mongodbcontainer
         image: mongo
+        command:
+         - "mongod"
+         - "--bind_ip"
+         - "0.0.0.0"
+         - "--replSet"
+         - "MainRepSet"
+        resources:
+          requests:
+            cpu: 200m
+            memory: 128Mi
+          limits:
+            cpu: 200m
+            memory: 256Mi
         ports:
         - containerPort: 27017
-        env:
+	env:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: springapp 
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: mongodb@123 
         volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
+        - name: mongodb-persistent-storage-claim
+          mountPath: "/data/db"
   volumeClaimTemplates:
   - metadata:
-      name: www
+      name: mongodb-persistent-storage-claim
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
           storage: 1Gi
-
----
-
-# MongoDB Node Port Service
-apiVersion: v1
-kind: Service
-metadata:
-  name: mongo
-spec:
-  type: ClusterIP
-  ports:
-  - port: 27017
-    targetPort: 27017
-  selector:
-    app: mongo
