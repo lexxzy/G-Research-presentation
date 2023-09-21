@@ -41,7 +41,7 @@ spec:
     app: springboot
 ---
 # MongoDB Replication Controller with host path Volume
-apiVersion: v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongo-controller
