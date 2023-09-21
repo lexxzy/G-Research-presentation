@@ -1,0 +1,6 @@
+---
+- name: Application Deployment
+  hosts: localhost
+  tasks:
+    - name: Deploy Application
+      shell: kubectl apply -f app.yaml
