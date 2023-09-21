@@ -12,12 +12,12 @@
 	<artifactId>GR-tech</artifactId>
  	<version>0.0.1</version>
 	<packaging>war</packaging>
-	<name>jendarey-tech</name>
-	<description>JendareyTech Web Java Project</description>
+	<name>Gr-tech</name>
+	<description>Gr ava Project</description>
 
 	<properties>
 		<java.version>17</java.version>
-		<sonar.host.url>http:54.237.56.200:9000/</sonar.host.url>
+		<sonar.host.url>http://54.146.66.80:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 	</properties>
@@ -72,13 +72,13 @@
 		<repository>
 			<id>nexus</id>
 			<name>G-Research Technologies Releases Nexus Repository</name>
-			<url>http://34.228.220.53:8081/jendarey/repository/web-releases/</url>
+			<url>http://52.71.174.31:8081/repository/GR-presentation/</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>G-Resaerch Snapshot Nexus Repository</name>
-			<url>http://34.228.220.53:8081/jendarey/repository/web-snapshots/</url>
+			<url>http:http://52.71.174.31:8081/repository/Gr-snap/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
