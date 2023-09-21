@@ -49,6 +49,7 @@ spec:
   replicas: 1
   selector:
     app: mongo
+  serviceName: mongo
   template:
     metadata:
       labels:
