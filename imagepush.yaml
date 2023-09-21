@@ -1,0 +1,16 @@
+---
+- name: Push Docker Image to Docker Hub
+  hosts: localhost
+  tasks:
+    - name: Log in to Docker Hub
+      community.general.docker_login:
+        username: lexxzy
+        password: Lekan@155
+      register: docker_login_result
+
+    - name: Push Docker Image to Docker Hub
+      community.general.docker_image:
+        name: lexxzy/gr-image
+        tag: latest
+        push: yes
+      when: docker_login_result.status == 'success'
