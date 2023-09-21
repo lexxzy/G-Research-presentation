@@ -8,19 +8,18 @@
 		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.GR</groupId>
-	<artifactId>GR-tech</artifactId>
- 	<version>0.0.1</version>
+	<groupId>com.jendarey</groupId>
+	<artifactId>jendarey-tech</artifactId>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
-	<name>Gr-tech</name>
-	<description>Gr java Project</description>
+	<name>jendarey-tech</name>
+	<description>JendareyTech Web Java Project</description>
 
 	<properties>
 		<java.version>17</java.version>
-		<sonar.host.url>http://100.26.172.83:9000//</sonar.host.url>
+		<sonar.host.url>http://100.26.172.83:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
-	</properties>
 	</properties>
 
 	<dependencies>
@@ -72,19 +71,19 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<name>G-Research Technologies Releases Nexus Repository</name>
+			<name>GR Releases Nexus Repository</name>
 			<url>http://18.209.36.244:8081/repository/GR-presentation/</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>G-Resaerch Snapshot Nexus Repository</name>
+			<name>Gr Nexus RepositorySnap</name>
 			<url>http://18.209.36.244:8081/repository/Gr-snap/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
-	 <finalName>GR-voting-app-main</finalName>
+	 <finalName>jendarey-voting-app-main</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
