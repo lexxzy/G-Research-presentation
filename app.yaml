@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: mylandmarktech/spring-boot-mongo
+        image: leexzy/gr-image
         ports:
         - containerPort: 8080  
         env:
@@ -78,13 +78,6 @@ spec:
          - "0.0.0.0"
          - "--replSet"
          - "MainRepSet"
-        resources:
-          requests:
-            cpu: 200m
-            memory: 128Mi
-          limits:
-            cpu: 200m
-            memory: 256Mi
         ports:
         - containerPort: 27017
 	env:
