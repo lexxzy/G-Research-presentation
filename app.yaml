@@ -26,7 +26,7 @@ spec:
           value: springapp
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: mongodb@123
-
+---
 # Node Port Service For SpringApp
 apiVersion: v1
 kind: Service
@@ -39,7 +39,7 @@ spec:
       targetPort: 8080
   selector:
     app: springboot
-
+---
 # MongoDB Replication Controller with host path Volume
 apiVersion: v1
 kind: StatefulSet
@@ -75,6 +75,8 @@ spec:
       resources:
         requests:
           storage: 1Gi
+
+---
 
 # MongoDB Node Port Service
 apiVersion: v1
