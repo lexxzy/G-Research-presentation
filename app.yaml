@@ -18,7 +18,7 @@ spec:
       - name: springboot
         image: leexzy/gr-image
         ports:
-        - containerPort: 8080  
+        - containerPort: 8080
         env:
         - name: MONGO_DB_HOSTNAME
           value: mongo
@@ -41,18 +41,6 @@ spec:
     app: springboot
 ---
 # MongoDB Replication Controller with host path Volume
-apiVersion: v1
-kind: Service
-metadata:
-  name: mongosvc
-spec:
-  clusterIP: None # Headless Service
-  selector:
-    app: mongod
-  ports:
-  - port: 27017
-    targetPort: 27017
----
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -80,11 +68,11 @@ spec:
          - "MainRepSet"
         ports:
         - containerPort: 27017
-	env:
-	- name: MONGO_INITDB_ROOT_USERNAME
-    	  value: springapp 
-  	- name: MONGO_INITDB_ROOT_PASSWORD
-    	  value: mongodb@123 
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: springapp 
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: mongodb@123 
         volumeMounts:
         - name: mongodb-persistent-storage-claim
           mountPath: "/data/db"
@@ -96,3 +84,16 @@ spec:
       resources:
         requests:
           storage: 1Gi
+---
+# MongoDB Headless Service (for StatefulSet)
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongosvc
+spec:
+  clusterIP: None # Headless Service
+  selector:
+    app: mongod
+  ports:
+  - port: 27017
+    targetPort: 27017
