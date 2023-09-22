@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: leexzy/gr-image
+        image: lexxzy/gr-image
         ports:
         - containerPort: 8080
         env:
